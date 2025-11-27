@@ -7,11 +7,6 @@ export const getExcelColumns = () => [
     width: 5,
   },
   {
-    header: "Source",
-    key: "Source",
-    width: 10,
-  },
-  {
     header: "Référence",
     key: "reference",
     width: 10,
