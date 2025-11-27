@@ -31,29 +31,9 @@ const authenticate = async () => {
 
     page = await browser.newPage();
     scraperLogger.logInfo("AUTO 🤖", "Navigation vers la page de connexion");
-    await page.goto(config.urls.loginUrl, { waitUntil: "networkidle2" });
-
-    scraperLogger.logInfo("AUTO 🤖", "Saisie du numéro de carte");
-    await page.waitForSelector('input[name="cardNumber"]');
-    await page.type('input[name="cardNumber"]', config.auth.user, {
-      delay: 100,
-    });
-
-    scraperLogger.logInfo("AUTO 🤖", "Soumission du numéro de carte");
-    await page.waitForSelector(
-      'button[ng-click="onCardNumberSubmit(card_number)"]:not([disabled])'
-    );
-    await page.click('button[ng-click="onCardNumberSubmit(card_number)"]');
-
-    scraperLogger.logInfo("AUTO 🤖", "Saisie du mot de passe");
-    await page.waitForSelector('input[type="password"]', { timeout: 10000 });
-    await page.type('input[type="password"]', config.auth.password, {
-      delay: 100,
-    });
 
     scraperLogger.logInfo("AUTO 🤖", "Soumission du formulaire de connexion");
     await page.click('input[type="submit"]');
-    await page.waitForNavigation({ waitUntil: "networkidle2" });
 
     const cookies = await page.cookies();
 
