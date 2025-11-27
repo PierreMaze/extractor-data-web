@@ -21,8 +21,6 @@ export const generateExcelFileForChunk = async (dataChunk, partNumber) => {
 
   dataChunk.forEach((item) => {
     const row = sheet.addRow(item);
-    // création de la colonne "Source" avec la valeur "LPDB"
-    row.getCell("Source").value = "LPDB";
 
     const cell = row.getCell("reference");
     cell.value = {
