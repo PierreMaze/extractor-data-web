@@ -35,14 +35,6 @@
     "automation",
     "puppeteer"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PierreMaze/Scrapping-App.git"
-  },
-  "bugs": {
-    "url": "https://github.com/PierreMaze/Scrapping-App/issues"
-  },
-  "homepage": "https://github.com/PierreMaze/Scrapping-App#readme",
   "author": "Pierre MAZELAYGUE",
   "license": "MIT",
   "packageManager": "pnpm@10.8.0"
